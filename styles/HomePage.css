@@ -20,6 +20,7 @@
 .hamMenu svg {
   height: 40px;
   width: 38px;
+  cursor: pointer;
 }
 .menu-container p {
   color: var(--text-clr);
