@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
 #main-content {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0);
   position: fixed;
   top: 0;
   left: 0;
   transform: translateX(-100%);
   overflow: hidden;
-  height: 100%;
-  width: 100%;
+  height: 100%; /* Full height */
+  width: 100%; /* Full width */
   transition: all 0.5s ease;
 }
 
@@ -17,8 +17,8 @@
   background-color: transparent;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;
+  width: 100%; /* Full width */
+  height: 100vh; /* Full height */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,8 +32,9 @@
   background: transparent;
 }
 
-#landing-hammenu {
+#hamMenu {
   cursor: pointer;
+  z-index: 99999;
 }
 
 .landing-menu__section {
@@ -42,19 +43,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  /* gap: 1rem; */
   width: 100%;
+  height: 100%;
+  margin-top: -130px;
 }
 
 .rotating-menu-Text {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 200px; /* Full width */
+  height: 200px; /* Full height */
   display: flex;
   justify-content: center;
   align-items: center;
   align-self: flex-end;
-  margin: 0 3rem; /* Adjusted margin for better spacing */
+  margin: 0 3rem;
+  margin-bottom: 1rem;
 }
 
 .rotating-text {
@@ -67,9 +71,11 @@
   text-transform: uppercase;
   animation: rotateText 25s linear infinite;
 }
+
 .active {
   transform: translateX(0) !important;
 }
+
 @keyframes rotateText {
   0% {
     transform: rotate(0deg);
@@ -91,19 +97,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 220px;
-  gap: 1rem;
+  width: 100%; /* Full width */
+  height: 300px; /* Full height */
 }
+
 .landing-menu-item {
   display: flex;
   flex-direction: column; /* Stack image and name vertically */
   align-items: center; /* Center items horizontally */
-  /* text-align: center;  */
+}
+
+.item1 {
+  margin-right: 3rem;
 }
 
 .landing-menu-item img {
-  width: 100px;
+  width: 110px;
   position: relative;
   transition: all 0.5s ease-in-out;
   opacity: 0;
@@ -119,8 +128,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 15%;
-  /* margin-top: 5rem; */
+  top: 25%;
   font-family: "Josefin Sans", serif;
   color: white;
   font-size: 1.5rem;
@@ -132,10 +140,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4rem; /* Increased gap for better spacing */
+  gap: 1rem;
   width: 100%;
   font-family: "Josefin Sans", serif;
 }
+
 .landing-menu-image {
   position: relative;
   width: 70px;
@@ -143,7 +152,7 @@
 }
 
 .landing-menu__Terms a {
-  font-size: 17px;
+  font-size: 24px;
   padding: 8px 16px; /* Adjusted padding for better click area */
   color: #760036;
   text-transform: capitalize;
@@ -158,5 +167,102 @@
   cursor: pointer;
 }
 
-@media (max-width: 1024) {
+@media (max-width: 1024px) {
+  .rotating-menu-Text {
+    display: none !important;
+  }
+  .rotating-menu-Text > div a {
+    font-size: 22px;
+  }
+  .landing-menu__section {
+    justify-content: space-evenly;
+    height: 100%; /* Full height */
+    gap: 2rem;
+  }
+  .landing-menu-container {
+    margin-top: -10rem;
+    gap: 2rem;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+  }
+  .landing-menu-item img {
+    width: 90px;
+  }
+  .landing-menu__Terms a {
+    font-size: 19px;
+  }
+  .landing-menu__Terms {
+    margin: 0 3rem;
+  }
+  .span.image-name {
+    top: 3%;
+  }
+  .landing-menu-item img {
+    width: 90px;
+  }
+  .landing-menu__section {
+    margin-top: -25px;
+  }
+  .landing-menu-container {
+    height: 200px;
+  }
+  .image-name {
+    top: 8%;
+  }
+}
+@media (max-width: 768px) {
+  .image-name {
+    top: 20%;
+  }
+  .landing-menu-image {
+    height: 300px;
+    color: maroon;
+  }
+  .landing-menu-item.item1 {
+    width: unset;
+  }
+}
+@media (max-width: 450px) {
+  .menu-header {
+    padding: 25px 40px 25px 45px !important;
+  }
+
+  .landing-menu__Terms {
+    display: none;
+  }
+
+  #landing-Menu {
+    height: 100vh;
+  }
+
+  .landing-menu-container {
+    height: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .landing-menu-item img {
+    display: none;
+  }
+
+  .image-name {
+    position: relative;
+    top: 0;
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .landing-menu-item.item1 {
+    width: 100%;
+    margin: 0;
+  }
+  .span.image-name {
+    width: 100%;
+  }
 }

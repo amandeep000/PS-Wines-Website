@@ -15,6 +15,3 @@ console.log(menu);
 menu.forEach((item) =>
   item.addEventListener("click", () => main.classList.toggle("active"))
 );
-// menu.addEventListener("click", () => {
-//   main.classList.toggle("active");
-// });
